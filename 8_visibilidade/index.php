@@ -3,7 +3,11 @@
 class Car { 
 
     public $rodas = 4;
-    public $vidro = "Sem pelicula";
+    private $vidro = "Sem pelicula";
+
+    public function getVidro() {
+        return $this->vidro;
+    }
 
 }
 
@@ -13,9 +17,10 @@ class mecanico {
         $carro->rodas = 10;
     }
 
-    public function colocarPelicula($carro, $pelicula) {
-        $carro->vidro = $pelicula;
-    }
+ 
+    public function peliculaDeFabrica($pelicula) {
+        $this->vidro = $pelicula;
+    } 
 }
 $carro = new Car;
 
@@ -27,8 +32,10 @@ $renato->alterarRodas($carro);
 
 echo $carro->rodas . "<br>";
 
+// Não pode alterar pq é privado
 
+// $renato->colocarPelicula($carro, "G20");
 
-$renato->colocarPelicula($carro, "G20");
+//$carro->peliculaDeFabrica("g10");
 
- echo $carro->vidro . "<br>";
+ echo $carro->getVidro() . "<br>";
