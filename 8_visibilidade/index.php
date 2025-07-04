@@ -4,9 +4,14 @@ class Car {
 
     public $rodas = 4;
     private $vidro = "Sem pelicula";
+    protected $portas = 4;
 
     public function getVidro() {
         return $this->vidro;
+    }
+
+     public function getPortas() {
+        return $this->portas;
     }
 
 }
@@ -39,3 +44,5 @@ echo $carro->rodas . "<br>";
 //$carro->peliculaDeFabrica("g10");
 
  echo $carro->getVidro() . "<br>";
+
+ echo $carro->getPortas() . "<br>";
